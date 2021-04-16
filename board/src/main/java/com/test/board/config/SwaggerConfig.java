@@ -19,15 +19,15 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(swaggerInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ssafy.green.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.test.board.controller"))
                 .paths(PathSelectors.any()).build();
     }
 
     private ApiInfo swaggerInfo() {
         return new ApiInfoBuilder()
-                .title("Green Fingers API Documnentation")
+                .title("SpringBoot-JPA-Test API Documnentation")
                 .description(
-                        "Green Fingers Resource API 문서입니다!")
+                        "SpringBoot-JPA-Test Resource API 문서입니다!")
                 .version("0.2")
                 .build();
 
