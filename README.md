@@ -1,3 +1,4 @@
-# spring-boot-jpa
+# spring-boot
 
-Spring Boot + JPA Practice
+### Spring Boot + JPA Practice
+- board
