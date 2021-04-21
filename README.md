@@ -1,4 +1,4 @@
 # spring-boot
 
 ### Spring Boot + JPA Practice
-- board
+- simple-test-jpt >> board
