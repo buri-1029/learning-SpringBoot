@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor
 @Table(name = "board")
-public class Board extends BaseTime{
+public class Board extends BaseTime {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Board extends BaseTime{
     @Column(name = "content", columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    @Column(name = "nickname",nullable = false)
+    @Column(name = "nickname", nullable = false)
     private String nickname;
 
     @Builder
