@@ -10,6 +10,8 @@ spring:
     password: ssafy
 
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
@@ -18,3 +20,9 @@ spring:
 logging:
   level:
     me.buri-1029: DEBUG
+
+# echo 'buri-spring-boot-simple-test-jwt-login-buri-spring-boot-simple-test-jwt-login-buri-spring-boot-simple-test-jwt-login' | base64
+jwt:
+  header: Authorization
+  secret: YnVyaS1zcHJpbmctYm9vdC1zaW1wbGUtdGVzdC1qd3QtbG9naW4tYnVyaS1zcHJpbmctYm9vdC1zaW1wbGUtdGVzdC1qd3QtbG9naW4tYnVyaS1zcHJpbmctYm9vdC1zaW1wbGUtdGVzdC1qd3QtbG9naW4K
+  token-validity-in-seconds: 86400

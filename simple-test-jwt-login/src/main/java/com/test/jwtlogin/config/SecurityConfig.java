@@ -1,6 +1,7 @@
 package com.test.jwtlogin.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -10,6 +11,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // WebSecurityConfigurer를 implements 하거나
     // WebSecurityConfigurerAdapter를 extends 하는 2가지 방법
 
+    // h2-console 하위 모든 요청들과 파비콘 관련 요청은 Spring Security 로직을 수행하지 않도록
+    @Override
+    public void configure(WebSecurity web){
+        web
+                .ignoring()
+                .antMatchers(
+                        "/h2-console/**"
+                        ,"/favicon.ico"
+                );
+    }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

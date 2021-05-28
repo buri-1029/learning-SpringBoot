@@ -11,7 +11,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user")
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,12 +20,12 @@ public class User {
 
     @JsonIgnore
     @Id
-    @Column(name = "uid")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email", length = 50, unique = true)
-    private String email;
+    @Column(name = "name", length = 50, unique = true)
+    private String name;
 
     @JsonIgnore
     @Column(name = "password", length = 100)
@@ -40,7 +41,8 @@ public class User {
     @ManyToMany
     @JoinTable(
             name = "user_authority",
-            joinColumns = {@JoinColumn(name = "uid", referencedColumnName = "uid")},
+            joinColumns = {@JoinColumn(name = "id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
     private Set<Authority> authorities;
+
 }
