@@ -1,17 +1,18 @@
 package com.test.board.model.entity;
 
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
-@Data
-@Entity
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
-@Table(name = "board")
+@AllArgsConstructor
+// Get, Set, Builder, Constructor 관련 코드 자동 생성
+@Entity // 데이터베이스의 테이블과 1:1 매핑되는 객체
+@Table(name = "board") // 테이블 명을 "board"로 지정하기 위하여 Table annotation 사용
 public class Board extends BaseTime {
     @Id
     @Column(name = "id")

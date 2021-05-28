@@ -17,4 +17,4 @@ spring:
 
 logging:
   level:
-    me.silvernine: DEBUG
+    me.buri-1029: DEBUG
