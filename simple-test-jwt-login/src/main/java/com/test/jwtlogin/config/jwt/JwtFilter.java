@@ -1,4 +1,4 @@
-package com.test.jwtlogin.jwt;
+package com.test.jwtlogin.config.jwt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

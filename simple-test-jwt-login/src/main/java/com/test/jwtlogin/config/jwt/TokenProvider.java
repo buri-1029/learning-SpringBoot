@@ -1,4 +1,4 @@
-package com.test.jwtlogin.jwt;
+package com.test.jwtlogin.config.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
@@ -66,6 +66,7 @@ public class TokenProvider implements InitializingBean {
     }
 
     // Token에 담겨있는 정보를 이용해 Authentication 객체를 리턴하는 메소드
+    // 토큰으로 클레임을 만들고 이를 이용해 유저 객체를 만들어서 최종적으로 Authentication 객체를 리턴
     public Authentication getAuthentication(String token) {
         Claims claims = Jwts
                 .parserBuilder()
