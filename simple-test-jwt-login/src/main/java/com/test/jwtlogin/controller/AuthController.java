@@ -31,10 +31,11 @@ public class AuthController {
     }
 
     // LoginDto의 username, password를 파라미터로 받고 이를 이용해 UsernamePasswordAuthenticationToken을 생성
-    // Authentication 객체를 생성하고 이를 SecurityContext에 저장하고 Authentication 객체를 createToken메소드를 통해서 JWT Token을 생성
+    // Authentication 객체를 생성하고 이를 SecurityContext에 저장하고 Authentication 객체를 createToken 메소드를 통해서 JWT Token을 생성
     @PostMapping
     public ResponseEntity<TokenDto> authorize(@Valid @RequestBody LoginDto loginDto) {
-
+        // authenticationToken을 이용해서 Authentication 객체를 생성하려고 authenticate 메소드가
+        // 실행이 될 때 CustomUserDetailsService의 loadUserByUsername 메소드가 실행 됨.
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);

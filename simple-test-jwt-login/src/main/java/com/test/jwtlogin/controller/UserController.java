@@ -30,8 +30,8 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    public ResponseEntity<User> getMyUserInfo() {
-        return ResponseEntity.ok(userService.getMyUserWithAuthorities().get());
+    public ResponseEntity<User> getCurUserInfo() {
+        return ResponseEntity.ok(userService.getCurUserWithAuthorities().get());
     }
 
     @GetMapping("/{username}")
