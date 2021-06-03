@@ -29,13 +29,13 @@ public class UserController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')") // 허용권한 정해주기
     public ResponseEntity<User> getCurUserInfo() {
         return ResponseEntity.ok(userService.getCurUserWithAuthorities().get());
     }
 
     @GetMapping("/{username}")
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')") // 허용권한 정해주기 
     public ResponseEntity<User> getUserInfo(@PathVariable String username) {
         return ResponseEntity.ok(userService.getUserWithAuthorities(username).get());
     }

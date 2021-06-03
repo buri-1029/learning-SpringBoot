@@ -15,6 +15,9 @@ public class SecurityUtil {
     private SecurityUtil() {
     }
 
+    // getCurrentUsername 메소드의 역할은 Security Context의 Authentication 객체를 이용해 username 리턴해주는 간단한 유틸성 메소드
+    // Security Context Authentication 객체가 저장되는 시점은 JwtFilter의 doFilter 메소드에서
+    // Request가 들어올 때 SecurityContext에 Authentication 객체를 저장해서 사용하게 됨.
     public static Optional<String> getCurrentUsername() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 

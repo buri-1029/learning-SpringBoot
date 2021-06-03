@@ -24,15 +24,17 @@ public class UserService {
 
     @Transactional
     public User signup(UserDto userDto) {
+        // username이 DB에 존재하지 않으면 Authority와 User 정보를 생성해서 UserRepository의 sava 메소드를 통해 DB에 정보를 저장
         if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다.");
         }
 
-        //빌더 패턴의 장점
+        // 권한정보 생성 >> 빌더 패턴의 장점
         Authority authority = Authority.builder()
                 .authorityName("ROLE_USER")
                 .build();
 
+        // 유저정보 생성
         User user = User.builder()
                 .username(userDto.getUsername())
                 .password(passwordEncoder.encode(userDto.getPassword()))
@@ -46,6 +48,7 @@ public class UserService {
 
     @Transactional
     public Optional<User> getUserWithAuthorities(String username) {
+        // SecurityContext에 저장된 username의 정보만 가져옴.
         return userRepository.findOneWithAuthoritiesByUsername(username);
     }
 
