@@ -2,7 +2,9 @@
 
 ### Spring Boot + JPA Practice
 
-- simple-test-jpa : board
+- simple-test-jpa : Board
 
-### Spring Boot + Security
+### Spring Boot + Spring Security + JWT >> Login
+
+- simple-test-jwt-login : JwtLogin
 
