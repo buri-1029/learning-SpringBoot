@@ -1,2 +1,0 @@
-com/test/board/BoardApplicationTests.java
- com.test.board.BoardApplicationTests

@@ -2,8 +2,8 @@ package com.buri.board.controller;
 
 import com.buri.board.model.dto.BoardListResponseDto;
 import com.buri.board.model.dto.BoardRequestDto;
-import com.buri.board.service.BoardService;
 import com.buri.board.model.dto.BoardResponseDto;
+import com.buri.board.service.BoardService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
