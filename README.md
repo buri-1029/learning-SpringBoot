@@ -4,8 +4,7 @@
 
 - simple-test-jpa : Board
 
-### Spring Boot + RESTful Practice
-
+### Spring Boot Basic
 -
 
 ### Spring Boot + Spring Security + JWT >> Login
