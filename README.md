@@ -1,13 +1,15 @@
 # spring-boot
 
+### Spring Boot Basic
+
+- learning-basic :
+
 ### Spring Boot + JPA Practice
 
-- simple-test-jpa : Board
+- learning-jpa : Board
 
-### Spring Boot Basic
--
 
 ### Spring Boot + Spring Security + JWT >> Login
 
-- simple-test-jwt-login : JwtLogin
+- learning-jwt-login : JwtLogin
 
