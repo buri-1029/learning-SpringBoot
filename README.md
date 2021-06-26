@@ -9,7 +9,7 @@
 - learning-jpa : Board
 
 
-### Spring Boot + Spring Security + JWT >> Login
+### Spring Boot + Spring Security + JWT + Login
 
 - learning-jwt-login : JwtLogin
 
