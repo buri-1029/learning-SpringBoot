@@ -12,4 +12,3 @@
 
 - learning-jwt-login : JwtLogin
 
-### Spring Boot + TDD
