@@ -3,7 +3,9 @@ package com.buri.basic.service;
 import com.buri.basic.domain.Member;
 import com.buri.basic.repository.MemberRepository;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class MemberService {
 
 	private final MemberRepository memberRepository;

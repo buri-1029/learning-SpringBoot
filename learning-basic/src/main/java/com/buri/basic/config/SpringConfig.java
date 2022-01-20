@@ -1,7 +1,6 @@
 package com.buri.basic.config;
 
 import com.buri.basic.repository.MemberRepository;
-import com.buri.basic.repository.MemoryMemberRepository;
 import com.buri.basic.service.MemberService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,14 +8,24 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
-	@Bean
-	public MemberService memberService() {
-		return new MemberService(memberRepository());
+	private final MemberRepository memberRepository;
+
+	public SpringConfig(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
 	}
 
 	@Bean
-	public MemberRepository memberRepository() {
-		return new MemoryMemberRepository();
+	public MemberService memberService() {
+		return new MemberService(memberRepository);
 	}
+
+	// private final EntityManager em;
+
+	//	@Bean
+	//	public MemberRepository memberRepository() {
+	//		 return new JpaMemberRepository(em);
+	//		 return new JdbcMemberRepository(dataSource);
+	//		 return new MemoryMemberRepository();
+	//	}
 
 }
